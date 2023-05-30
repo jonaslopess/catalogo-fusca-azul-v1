@@ -1,0 +1,7 @@
+{
+  "name": "catalogo-fusca-azul-v1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
