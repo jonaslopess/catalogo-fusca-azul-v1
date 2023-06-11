@@ -16,12 +16,13 @@
   <ion-searchbar placeholder="Procure por um tipo ou loja" [(ngModel)]="texto"></ion-searchbar>
 
   <ion-list>
-    <ion-item *ngFor="let peca of pecas">
+    <ion-item *ngFor="let peca of pecas | filtro:texto">
       <ion-label [routerLink]="['/home/detalhes', peca.getCodigo]">
         <h4>({{peca.getCodigo}})</h4>
         <h2><strong>{{peca.getDescricao}}</strong></h2>
         <h3>[{{peca.getTipo}}] {{peca.getPreco | currency:'BRL':'symbol'}}</h3>
         <h3>{{peca.getQuantidadeDisponivel}} unidade(s) em estoque</h3>
+        <h3>na loja: {{peca.getLoja.getNome}}</h3>
       </ion-label>
     </ion-item>
   </ion-list>
